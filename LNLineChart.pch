@@ -1,0 +1,35 @@
+//
+//  LNLineChart.pch
+//  LNLineChart
+//
+//  Created by Doris on 2017/6/6.
+//  Copyright © 2017年 Doris. All rights reserved.
+//
+
+#ifndef LNLineChart_pch
+#define LNLineChart_pch
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIView+MLExtension.h"
+#import "NSDate+LNExtension.h"
+#import "NSString+LNExtension.h"
+#import "UIImage+MLExtension.h"
+#import "UIFont+MLExtension.h"
+#import "UIColor+MLExtension.h"
+#import "MJExtension.h"
+#endif
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define MLPercent (([UIScreen mainScreen].bounds.size.width)<([UIScreen mainScreen].bounds.size.height)?([UIScreen mainScreen].bounds.size.width/768):([UIScreen mainScreen].bounds.size.height/768))
+#define DefaultOneH (1*MLPercent<=0.5 ?0.5:1*MLPercent)
+
+#define MLARGBColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+#define MLColor(r, g, b) MLARGBColor((r), (g), (b), 1)
+#define MLGrayColor(v) MLColor((v), (v), (v))
+
+#define createImage(a) [[UIImage alloc] initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], a]]
+#endif /* LNLineChart_pch */
